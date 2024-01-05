@@ -1,0 +1,23 @@
+.container {
+    grid-area: header;
+    display: flex;
+    background-color: #363738;
+    align-items: center;
+}
+
+.container img {
+    height: 50px;
+}
+
+.logo {
+    display: flex;
+    padding: 5px;
+    padding-left: 15px;
+    width: 50px;
+    align-items: center;
+}
+
+.name {
+    height: 15px;
+    padding-left: 15px;
+}

@@ -1,0 +1,19 @@
+.container {
+    grid-area: navbar;
+    margin: 15px 15px;
+}
+
+.item {
+    padding: 10px 20px;
+}
+
+.item a {
+    padding: 5px 20px;
+
+}
+
+.item:hover {
+    background-color: #363738;
+    transition: all 0.5s;
+    border-radius: 5px;
+}
