@@ -1,3 +1,4 @@
+import React from "react";
 import './reset.css';
 import './App.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
@@ -12,11 +13,11 @@ import { Settings } from './components/Settings/Settings';
 
 function App() {
   return (
-    <div className="app-container">
-      <Header />
-      <Navbar />
-      <div className='main-content'>
-        <BrowserRouter>
+    <BrowserRouter>
+      <div className="app-container">
+        <Header />
+        <Navbar />
+        <div className='main-content'>
           <Routes>
             <Route path="/dialogs" element={<Dialogs />} />
             <Route path="/profile" element={<Profile />} />
@@ -24,9 +25,9 @@ function App() {
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
-        </BrowserRouter>
+        </div>
       </div>
-    </div>
+    </BrowserRouter >
   );
 }
 

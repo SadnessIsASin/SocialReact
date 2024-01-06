@@ -17,10 +17,9 @@ export const UserInfo = () => {
                     <b>Город:</b> Москва, Нагатино
                 </div>
                 <div className={styles.param}>
-                    <b>Семейное положение:</b> Хочу к Паше на член
+                    <b>Семейное положение:</b> Замужем
                 </div>
             </div>
-
         </div>
     )
 }
