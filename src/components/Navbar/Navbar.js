@@ -1,13 +1,24 @@
 import styles from './Navbar.module.css';
 
+
 export const Navbar = () => {
     return (
-        <div className={styles.container}>
-            <div className={styles.item}><a href="#">Мой профиль</a></div>
-            <div className={styles.item}><a href="#">Сообщения</a></div>
-            <div className={styles.item}><a href="#">Новости</a></div>
-            <div className={styles.item}><a href="#">Музыка</a></div>
-            <div className={styles.item}><a href="#">Настройки</a></div>
-        </div>
+        <nav className={styles.container}>
+            <div className={styles.item}>
+                <a href="/profile">Профиль</a>
+            </div>
+            <div className={styles.item}>
+                <a href="/dialogs">Сообщения</a>
+            </div>
+            <div className={styles.item}>
+                <a href="/news">Новости</a>
+            </div>
+            <div className={styles.item}>
+                <a href="/music">Музыкая</a>
+            </div>
+            <div className={styles.item}>
+                <a href="/settings">Настройки</a>
+            </div>
+        </nav>
     )
 }
