@@ -1,0 +1,16 @@
+.container{
+    padding-bottom: 20px;
+}
+
+.container:last-child{
+    padding-bottom: 0;
+}
+
+.item {
+}
+
+.item:hover {
+    background-color: #363738;
+    transition: all 0.5s;
+    border-radius: 5px;
+}

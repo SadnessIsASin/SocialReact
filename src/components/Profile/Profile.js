@@ -1,15 +1,11 @@
-import { MyPosts } from './MyPosts/MyPosts';
-import styles from './Profile.module.css';
-import { UserInfo } from './UserInfo/UserInfo';
-
+import {MyPosts} from './MyPosts/MyPosts';
+import {ProfileInfo} from './ProfileInfo/ProfileInfo';
 
 export const Profile = () => {
     return (
-        <div className={styles.container}>
-            <div className={styles.profile}>
-                <UserInfo />
-                <MyPosts />
-            </div>
+        <div>
+            <ProfileInfo/>
+            <MyPosts/>
         </div>
     )
 } 

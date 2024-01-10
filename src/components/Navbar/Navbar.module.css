@@ -4,16 +4,15 @@
 }
 
 .item {
-    padding: 10px 20px;
-}
-
-.item a {
-    padding: 5px 20px;
-
+    padding: 10px 40px;
 }
 
 .item:hover {
     background-color: #363738;
     transition: all 0.5s;
     border-radius: 5px;
+}
+
+.item a:focus {
+    font-weight: bold;
 }

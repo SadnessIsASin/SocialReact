@@ -1,6 +1,6 @@
-import styles from './UserInfo.module.css';
+import styles from './ProfileInfo.module.css';
 
-export const UserInfo = () => {
+export const ProfileInfo = () => {
     return (
         <div className={styles.container}>
             <div>
