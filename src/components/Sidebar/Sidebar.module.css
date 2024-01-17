@@ -1,0 +1,14 @@
+.container{
+    margin-top: 285px;
+}
+
+.friends{
+    display: grid;
+    grid-auto-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.h{
+    text-align: center;
+    margin-bottom: 10px;
+}
