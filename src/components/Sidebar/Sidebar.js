@@ -14,6 +14,5 @@ export const Sidebar = (props) => {
                 {sidebarElements}
             </div>
         </div>
-
     )
 };
