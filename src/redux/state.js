@@ -1,3 +1,5 @@
+import {renderEntireThree} from "../render";
+
 export let state = {
     profilePage: {
         posts: [
@@ -31,3 +33,14 @@ export let state = {
         ]
     }
 };
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 1,
+        author: 'Светлана Красных',
+        message: postMessage,
+        likeCount: 0
+    };
+    state.profilePage.posts.push(newPost);
+    renderEntireThree(state);
+}
