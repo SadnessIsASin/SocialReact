@@ -11,7 +11,7 @@ export const MyPosts = (props) => {
     return (
         <div className={styles.container}>
             {postsElements}
-            <ToDoPost addPost = {props.addPost} />
+            <ToDoPost addPost = {props.addPost} updateNewPostText = {props.updateNewPostText} />
         </div>
     )
 }

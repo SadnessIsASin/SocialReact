@@ -2,6 +2,7 @@ import styles from './Dialogs.module.css';
 import React from "react";
 import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Message/Message";
+import {SendMessage} from "./DialogItem/SendMessage/SendMessage";
 
 export const Dialogs = (props) => {
 
@@ -21,6 +22,10 @@ export const Dialogs = (props) => {
 
             <div className={styles.messageBox}>
                 {messagesElements}
+                <SendMessage
+                    sendMessage={props.sendMessage}
+                    updateNewMessageText={props.updateNewMessageText}
+                />
             </div>
         </div>
     )

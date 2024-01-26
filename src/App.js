@@ -11,7 +11,6 @@ import {Music} from './components/Music/Music';
 import {Settings} from './components/Settings/Settings';
 
 function App(props) {
-    debugger;
     return (
         <div className="app-container">
             <Header/>
@@ -19,9 +18,14 @@ function App(props) {
             <Routes>
                 <Route path="/dialogs/*" element={<Dialogs
                     dialogs={props.state.messagesPage.dialogs}
-                    messages={props.state.messagesPage.messages}/>}/>
+                    messages={props.state.messagesPage.messages}
+                    sendMessage = {props.sendMessage}
+                    updateNewMessageText = {props.updateNewMessageText}
+                />}/>
                 <Route path="/profile" element={<Profile
-                    posts={props.state.profilePage.posts} addPost={props.addPost}/>}/>
+                    posts={props.state.profilePage.posts}
+                    addPost={props.addPost}
+                    updateNewPostText = {props.updateNewPostText}/>}/>
                 <Route path="/news" element={<News/>}/>
                 <Route path="/music" element={<Music/>}/>
                 <Route path="/settings" element={<Settings/>}/>
