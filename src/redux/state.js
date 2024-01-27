@@ -1,4 +1,4 @@
-import {renderEntireThree} from "../render";
+let renderEntireThree = () => {}
 
 export let state = {
     profilePage: {
@@ -48,7 +48,7 @@ export let state = {
     }
 };
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 1,
         author: 'Светлана Красных',
@@ -59,11 +59,11 @@ export let addPost = () => {
     state.profilePage.newPostText = '';
     renderEntireThree(state);
 }
-export let updateNewPostText = (value) => {
+export const updateNewPostText = (value) => {
     state.profilePage.newPostText = value;
 }
 
-export let sendMessage = () => {
+export const sendMessage = () => {
     let newMessage = {
         id: 7,
         message: state.messagesPage.newMessageText
@@ -72,6 +72,10 @@ export let sendMessage = () => {
     state.messagesPage.newMessageText = '';
     renderEntireThree(state);
 }
-export let updateNewMessageText = (value) => {
+export const updateNewMessageText = (value) => {
     state.messagesPage.newMessageText = value;
+}
+
+export const subscribe = (observer) => {
+    renderEntireThree = observer;
 }
