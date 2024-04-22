@@ -23,8 +23,7 @@ export const Dialogs = (props) => {
             <div className={styles.messageBox}>
                 {messagesElements}
                 <SendMessage
-                    sendMessage={props.sendMessage}
-                    updateNewMessageText={props.updateNewMessageText}
+                    dispatch = {props.dispatch}
                 />
             </div>
         </div>
