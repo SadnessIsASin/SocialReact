@@ -1,28 +1,33 @@
+const UPDATE_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_POST = 'ADD-POST';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDATE_MESSAGE = 'UPDATE-NEW-MESSAGE-TEXT';
+
 export let store = {
     _state: {
         profilePage: {
             posts: [
-                { id: 1, author: 'Светлана Красных', message: 'Красотка, привет! Как ты?', likeCount: 4 },
-                { id: 2, author: 'Лиана Мун', message: 'Давай встретимся сегодня вечером?', likeCount: 15 },
+                {id: 1, author: 'Светлана Красных', message: 'Красотка, привет! Как ты?', likeCount: 4},
+                {id: 2, author: 'Лиана Мун', message: 'Давай встретимся сегодня вечером?', likeCount: 15},
             ],
             newPostText: ''
         },
         messagesPage: {
             dialogs: [
-                { id: 1, name: 'Павел Сундиков' },
-                { id: 2, name: 'Александр Ватутин' },
-                { id: 3, name: 'Дмитрий Петров' },
-                { id: 4, name: 'Петр Александров' },
-                { id: 5, name: 'Алексей Васильев' },
-                { id: 6, name: 'Василий Алексеев' }
+                {id: 1, name: 'Павел Сундиков'},
+                {id: 2, name: 'Александр Ватутин'},
+                {id: 3, name: 'Дмитрий Петров'},
+                {id: 4, name: 'Петр Александров'},
+                {id: 5, name: 'Алексей Васильев'},
+                {id: 6, name: 'Василий Алексеев'}
             ],
             messages: [
-                { id: 1, message: 'Привет' },
-                { id: 2, message: 'Привет' },
-                { id: 3, message: 'Привет' },
-                { id: 4, message: 'Привет' },
-                { id: 5, message: 'Привет' },
-                { id: 6, message: 'Привет' }
+                {id: 1, message: 'Привет'},
+                {id: 2, message: 'Привет'},
+                {id: 3, message: 'Привет'},
+                {id: 4, message: 'Привет'},
+                {id: 5, message: 'Привет'},
+                {id: 6, message: 'Привет'}
             ],
             newMessageText: ''
         },
@@ -58,7 +63,7 @@ export let store = {
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             let newPost = {
                 id: 1,
                 author: 'Светлана Красных',
@@ -68,24 +73,29 @@ export let store = {
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText = '';
             store._callSubsriber(this._state);
-        } 
-        
-        else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        } else if (action.type === UPDATE_TEXT) {
             this._state.profilePage.newPostText = action.newText;
-        } 
-        
-        else if (action.type === 'SEND-MESSAGE') {
-            let newMessage = {
-                id: 7,
-                message: this._state.messagesPage.newMessageText
-            };
-            this._state.messagesPage.messages.push(newMessage);
-            this._state.messagesPage.newMessageText = '';
-            store._callSubsriber(this._state);
-        } 
-    
-        else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
-            this._state.messagesPage.newMessageText = action.newText;
+        } else {
+
+            if (action.type === SEND_MESSAGE) {
+                let newMessage = {
+                    id: 7,
+                    message: this._state.messagesPage.newMessageText
+                };
+                this._state.messagesPage.messages.push(newMessage);
+                this._state.messagesPage.newMessageText = '';
+                store._callSubsriber(this._state);
+            } else {
+
+                if (action.type === UPDATE_MESSAGE) {
+                    this._state.messagesPage.newMessageText = action.newText;
+                }
+            }
         }
     }
 }
+
+export const addPostActionCreator = () => ({type: ADD_POST})
+
+export const onPostChangeActionCreator = (text) => ({type: UPDATE_TEXT,
+        newText: text})

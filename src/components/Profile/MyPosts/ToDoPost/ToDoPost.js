@@ -1,19 +1,20 @@
 import styles from './ToDoPost.module.css';
 import React from "react";
+import {addPostActionCreator, onPostChangeActionCreator} from "../../../../redux/state";
 
 export const ToDoPost = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        if (newPostElement.current.value != ''){
-            props.dispatch({ type : 'ADD-POST' });
+        if (newPostElement.current.value !== ''){
+            props.dispatch(addPostActionCreator());
         }
         
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch({ type : 'UPDATE-NEW-POST-TEXT', newText: text });
+        props.dispatch(onPostChangeActionCreator(text));
     }
 
     return (
