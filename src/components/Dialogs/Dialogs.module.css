@@ -17,3 +17,12 @@
     background-color: #363738;
     border-radius: 5px;
 }
+
+.container textarea {
+    resize: none;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #646161;
+    color: white;
+    border-radius: 5px;
+}
