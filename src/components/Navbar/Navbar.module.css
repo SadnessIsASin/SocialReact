@@ -1,6 +1,7 @@
 .container {
     grid-area: navbar;
     margin: 15px 15px;
+    max-width: 170px;
 }
 
 .item {

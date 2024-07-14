@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.avatar button {
+    padding: 7px 15px;
+    background-color: #363738;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #646161;
+    transition: .5s;
+    width: 90px;
+}
+
+.avatar button:hover {
+    transform: scale(1.2);
+    background-color: #f7c56e;
+    color: #363738;
+}
+
+
+.avatar{
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #363738;
+    text-align: center;
+}
+
+.avatar img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: .5s;
+}
+
+.avatar img:hover {
+    transform: scale(1.2);
+}
+
+.userInfo{
+    border-radius: 5px;
+    padding: 15px;
+    margin-left: 15px;
+    background-color: #363738;
+    width: 100%;
+}
+

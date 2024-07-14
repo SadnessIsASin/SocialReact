@@ -20,6 +20,9 @@ export const Navbar = (props) => {
             <div className={styles.item}>
                 <NavLink to="/settings">Настройки</NavLink>
             </div>
+            <div className={styles.item}>
+                <NavLink to="/users">Пользователи</NavLink>
+            </div>
             {/*<Sidebar myFriends = {props.myFriends} />*/}
         </nav>
     )

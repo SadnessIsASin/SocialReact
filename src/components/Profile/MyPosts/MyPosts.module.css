@@ -1,8 +1,6 @@
 .container {
-    width: 100%;
-    padding: 20px;
-    border-radius: 5px;
     background-color: #363738;
+    padding: 15px;
 }
 
 .container textarea {
@@ -13,3 +11,25 @@
     color: white;
     border-radius: 5px;
 }
+
+.inputArea {
+    display: flex;
+    align-items: center;
+}
+
+.inputArea button {
+    margin-left: 15px;
+    padding: 7px 15px;
+    background-color: #363738;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #646161;
+    transition: .5s;
+}
+
+.inputArea button:hover {
+    transform: scale(1.2);
+    background-color: #f7c56e;
+    color: #363738;
+}
+

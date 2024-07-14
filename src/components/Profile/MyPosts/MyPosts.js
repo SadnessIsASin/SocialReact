@@ -20,9 +20,12 @@ export const MyPosts = (props) => {
     return (
         <div className={styles.container}>
             {postsElements}
-            <textarea id="textareaid" onChange={onPostChange} ref={newPostElement} value={props.newPostText}
-                      placeholder="Написать комментарий..." cols="50" rows="1"/>
-                <button onClick={addPost}>Добавить</button>
+            <div className={styles.inputArea}>
+                <textarea id="textareaid" onChange={onPostChange} ref={newPostElement} value={props.newPostText}
+                          placeholder="Написать комментарий..." cols="50" rows="1"/>
+                <button onClick={addPost}>Отправить</button>
+            </div>
+
         </div>
     )
 }
