@@ -4,7 +4,10 @@ export const OneUser = (props) => {
     return (
         <div className={styles.container}>
             <div className={styles.avatar}>
-                    <img src= {props.photoUrl}
+                    <img src= {props.photo != null ?
+                        props.photo
+                        : "https://masterpiecer-images.s3.yandex.net/56304048743311eebac46a0259d7362a:upscaled"
+                    }
                              alt=""/>
                         {props.followed ?
                             <button onClick={() => props.unfollow(props.id)}>Удалить</button> :
@@ -12,10 +15,10 @@ export const OneUser = (props) => {
                 </div>
             <div className={styles.userInfo}>
                 <div>
-                    {props.fullName}
+                    {props.name}
                 </div>
                 <div>
-                    {props.location.city}
+                    "props.location.city"
                 </div>
                 <div>
                     {props.status}

@@ -1,32 +1,27 @@
 import React from "react";
 import {OneUser} from "./OneUser/OneUser";
 import styles from "./Users.module.css";
-
+import axios from "axios";
 
 export const Users = (props) => {
-    if (props.users.length === 0) {
-        props.setUsers(
-            [
-                {id: 1, photoUrl: 'https://masterpiecer-images.s3.yandex.net/56304048743311eebac46a0259d7362a:upscaled', fullName: 'Павел Сундиков', followed: false, status: 'Всем привет! Ищу друзей', location: {city: 'Москва', country: 'Россия'}},
-                {id: 2, photoUrl: 'https://masterpiecer-images.s3.yandex.net/56304048743311eebac46a0259d7362a:upscaled', fullName: 'Павел Сундиков', followed: false, status: 'Всем привет! Ищу друзей', location: {city: 'Москва', country: 'Россия'}},
-                {id: 3, photoUrl: 'https://masterpiecer-images.s3.yandex.net/56304048743311eebac46a0259d7362a:upscaled', fullName: 'Павел Сундиков', followed: true, status: 'Всем привет! Ищу друзей', location: {city: 'Москва', country: 'Россия'}},
-                {id: 4, photoUrl: 'https://masterpiecer-images.s3.yandex.net/56304048743311eebac46a0259d7362a:upscaled', fullName: 'Павел Сундиков', followed: true, status: 'Всем привет! Ищу друзей', location: {city: 'Москва', country: 'Россия'}}
-            ]
-        )
-    }
 
-
+    axios.get("https://social-network.samuraijs.com/api/1.0/users")
+        .then(response => {
+            if (props.users.length === 0) {
+                props.setUsers(response.data.items)
+            }
+        });
 
     let usersElement = props.users.map(
         m => <OneUser
-            follow = {props.follow}
-            unfollow = {props.unfollow}
-            id = {m.id}
-            fullName={m.fullName}
+            follow={props.follow}
+            unfollow={props.unfollow}
+            id={m.id}
+            name={m.name}
             status={m.status}
-            photoUrl = {m.photoUrl}
-            location={m.location}
-            followed = {m.followed}/>
+            photo={m.photos.small}
+            location="location"
+            followed={m.followed}/>
     );
 
     return (
