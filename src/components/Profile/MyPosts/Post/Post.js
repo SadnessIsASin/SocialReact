@@ -1,6 +1,10 @@
 import styles from './Post.module.css';
+import {useState} from "react";
 
 export const Post = (props) => {
+
+    const [likes, setLikes] = useState(props.likesCount);
+
     return (
         <div className={styles.container}>
             <div>
@@ -13,8 +17,10 @@ export const Post = (props) => {
                 <div className={styles.message}>
                     <span>{props.message}</span>
                 </div>
-                <div className= {styles.like}>
-                    <span>{props.likesCount}</span>
+                <div >
+                    <div className={styles.like} onClick={() => setLikes(props.likesCount+1)}>
+                        {likes}
+                    </div>
                 </div>
             </div>
         </div>
