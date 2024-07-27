@@ -4,6 +4,7 @@ import {useState} from "react";
 export const Post = (props) => {
 
     const [likes, setLikes] = useState(props.likesCount);
+    const [isLiked, setIsLiked] = useState(false);
 
     return (
         <div className={styles.container}>
@@ -18,7 +19,15 @@ export const Post = (props) => {
                     <span>{props.message}</span>
                 </div>
                 <div >
-                    <div className={styles.like} onClick={() => setLikes(props.likesCount+1)}>
+                    <div className={styles.like} onClick={() => {
+                        if(!isLiked) {
+                            setLikes(likes + 1);
+                            setIsLiked(true);
+                            } else {
+                            setLikes(likes - 1);
+                            setIsLiked(false);
+                            }
+                        }}>
                         {likes}
                     </div>
                 </div>

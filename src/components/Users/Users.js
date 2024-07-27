@@ -5,17 +5,31 @@ import axios from "axios";
 
 
 export class Users extends React.Component {
-    constructor(props) {
-        super(props);
 
-        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+    componentDidMount() {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items);
+                this.props.setTotalUsersCount(response.data.totalCount);
+            });
+    }
+
+    onPageChange = (p) => {
+        this.props.setCurrentPage(p);
+
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsers(response.data.items)
             });
-
     }
 
     render() {
+
+        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+        let pages = [];
+        for (let i = 1; i <= pagesCount; i++){
+            pages.push(i);
+        }
 
         let usersElement = this.props.users.map(
             m => <OneUser
@@ -31,6 +45,8 @@ export class Users extends React.Component {
 
         return (
             <div className={styles.container}>
+                {pages.map(p => {
+                    return <span onClick={()=> { this.onPageChange(p) }} className={this.props.currentPage === p && styles.selectedPage}>{p}</span>})}
                 {usersElement}
             </div>
         )

@@ -20,7 +20,7 @@ export const Dialogs = (props) => {
     return (
         <div className={styles.container}>
             <div className={styles.dialogsBox}>
-                {dialogsElements}
+                {dialogsElements} 
             </div>
 
             <div className={styles.messageBox}>
