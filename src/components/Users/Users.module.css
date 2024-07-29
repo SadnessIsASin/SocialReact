@@ -4,6 +4,15 @@
     width: 100%;
 }
 
+.pages{
+    margin-bottom: 5px;
+}
+
+a{
+    margin-right: 4px;
+}
+
 .selectedPage{
     font-weight: bold;
+
 }
