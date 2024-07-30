@@ -1,6 +1,7 @@
 import React from 'react';
 import {OneUser} from "./OneUser/OneUser";
 import styles from "./Users.module.css";
+import {Preloader} from "../../Common/Preloader/Preloader";
 
 
 export let Users = (props) => {
@@ -24,6 +25,9 @@ export let Users = (props) => {
 
     return (
         <div className={styles.container}>
+            {props.isFetching ?
+                <Preloader />
+                : null}
             <div className={styles.pages}>
                 {pages.map(p => {
                     return <a href="#" onClick={() => {
