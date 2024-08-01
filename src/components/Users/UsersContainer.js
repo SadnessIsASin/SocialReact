@@ -10,6 +10,7 @@ import {
 } from "../../redux/users-reducer";
 import axios from "axios";
 import {Users} from "./Users";
+import {ProfileConnect} from "../Profile/ProfileContainer";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
@@ -60,5 +61,5 @@ let mapStateToProps = (state) => {
 
 }
 
-export const UsersExp= connect(mapStateToProps, {
+export const UsersConnect= connect(mapStateToProps, {
     follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching})(UsersContainer);

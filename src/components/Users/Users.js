@@ -35,7 +35,7 @@ export let Users = (props) => {
                     }} className={props.currentPage === p && styles.selectedPage}>{p}</a>
                 })}
             </div>
-            {usersElement}
+                {usersElement}
         </div>
     )
 }
