@@ -2,7 +2,6 @@ import styles from './ProfileInfo.module.css';
 import {Preloader} from "../../../Common/Preloader/Preloader";
 
 export const ProfileInfo = (props) => {
-    debugger;
         if (!props.profile) {
             return <Preloader/>
         }

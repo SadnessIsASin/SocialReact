@@ -10,7 +10,6 @@ import {
 } from "../../redux/users-reducer";
 import axios from "axios";
 import {Users} from "./Users";
-import {ProfileConnect} from "../Profile/ProfileContainer";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
@@ -35,7 +34,6 @@ class UsersContainer extends React.Component {
 
     render() {
         return <>
-
             <Users
                 totalUsersCount={this.props.totalUsersCount}
                 pageSize={this.props.pageSize}
