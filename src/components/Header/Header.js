@@ -4,7 +4,6 @@ import React from "react";
 import {Preloader} from "../../Common/Preloader/Preloader";
 
 export const Header = (props) => {
-    debugger
     return (
         <div className={styles.container}>
             <div className={styles.logoContainer}>
@@ -33,11 +32,12 @@ export const Header = (props) => {
                     </a>
 
                 </a>
+
             </div>
             {props.isFetching ? <Preloader/> : null}
-                <div className={styles.loginBlock}>
-                    {props.auth ? props.login : <NavLink to="/login">Войти</NavLink>}
-                </div>
+            <div className={styles.loginBlock}>
+                {props.auth ? props.login : <NavLink to="/login">Войти</NavLink>}
+            </div>
         </div>
     )
 }
