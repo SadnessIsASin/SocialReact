@@ -1,7 +1,7 @@
 import styles from './OneUser.module.css';
 import {NavLink} from "react-router-dom";
 import React from "react";
-import axios from "axios";
+import {followAPI} from "../../API/API";
 
 export const OneUser = (props) => {
     return (
@@ -16,39 +16,20 @@ export const OneUser = (props) => {
                 </NavLink>
                 {props.followed ?
                     <button onClick={() => {
-
-
-
-                        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${props.id}`,
-                            {
-                                withCredentials: true,
-                                headers: {
-                                    "API-KEY": "7f89d151-ae2e-4942-92f0-aabd82b0ee8d"
-                                }
-                            })
-                            .then(response => {
-                                if(response.data.resultCode === 0){
+                        followAPI.unfollow(props.id)
+                            .then(data => {
+                                if (data.resultCode === 0) {
                                     props.unfollow(props.id)
                                 }
                             });
-
                     }}>Удалить</button> :
-
                     <button onClick={() => {
-
-                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${props.id}`, {},
-                            {
-                                withCredentials: true,
-                                headers: {
-                                    "API-KEY": "7f89d151-ae2e-4942-92f0-aabd82b0ee8d"
-                                }
-                            })
-                            .then(response => {
-                                if(response.data.resultCode === 0){
+                        followAPI.follow(props.id)
+                            .then(data => {
+                                if (data.resultCode === 0) {
                                     props.follow(props.id);
                                 }
                             });
-
                     }}>Добавить</button>}
             </div>
             <div className={styles.userInfo}>
