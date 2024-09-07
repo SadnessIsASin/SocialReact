@@ -20,7 +20,10 @@ export let Users = (props) => {
             status={m.status}
             photo={m.photos.small}
             location="location"
-            followed={m.followed}/>
+            followed={m.followed}
+            toggleFollowingProgress={props.toggleFollowingProgress}
+            followingInProgress={props.followingInProgress}
+        />
     );
 
     return (
