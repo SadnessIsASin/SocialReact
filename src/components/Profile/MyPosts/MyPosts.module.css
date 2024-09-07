@@ -1,6 +1,7 @@
 .container {
     background-color: #363738;
     padding: 15px;
+    border-radius: 5px;
 }
 
 .container textarea {
